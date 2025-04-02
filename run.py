@@ -78,3 +78,36 @@ class BattleshipGame:
             except KeyError:
                 print('Sorry invalid input, please enter a valid letter between A-J')
         return row, column
+
+    # Track how many hits the opponent has
+    def count_hit_ships(self, board):
+        return sum(row.count("X") for row in board)
+
+    # Initiate turn for Player or Computer
+    def turn(self, board):
+        if board == self.PLAYER_GUESS_BOARD:
+            row, column = self.user_input(True)
+            if board[row][column] == "-":
+                self.turn(board)
+            elif board[row][column] == "X":
+                self.turn(board)
+            # Display message whether target is a Hit or a Miss
+            elif self.COMPUTER_BOARD[row][column] == "X":
+                print("Player lands Hit!")
+                board[row][column] = "X"
+            else:
+                print("Player Misses")
+                board[row][column] = "-"
+        else:
+            row, column = random.randint(0, 9), random.randint(0, 9)
+            if board[row][column] == "-":
+                self.turn(board)
+            elif board[row][column] == "X":
+                self.turn(board)
+            # Display message whether target is a Hit or a Miss
+            elif self.PLAYER_BOARD[row][column] == "X":
+                print("Computer lands Hit!")
+                board[row][column] = "X"
+            else:
+                print("Player Misses")
+                board[row][column] = "-"
