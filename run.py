@@ -80,7 +80,7 @@ class BattleshipGame:
         return row, column
 
     # Track how many hits the opponent has
-    def count_hit_ships(self, board):
+    def count_ship_hits(self, board):
         return sum(row.count("X") for row in board)
 
     # Initiate turn for Player or Computer
