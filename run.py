@@ -26,3 +26,55 @@ class BattleshipGame:
             return column + SHIP_LENGTH <= 10
         else:
             return row + SHIP_LENGTH <= 10
+
+    def ship_overlaps(self, board, row, column, orientation, ship_length):
+        if orientation == "H":
+            return any(board[row][i] == "X" for i in range(column, column + ship_length))
+        else:
+            return any(board[i][column] == "X" for i in range(row, row + ship_length))
+
+
+    # Place each player's ships on their boards
+    def place_ships(self, board):
+        for ship_length in self.LENGTH_OF_SHIPS:
+            while True:
+                if board == self.COMPUTER_BOARD:
+                    orientation, row, column = random.choice(["H", "V"]), random.randint(0, 9), random.randint(0, 9)
+                    if self.check_ship_fit(ship_length, row, column, orientation) and not self.ship_overlaps(board, row, column, orientation, ship_length):
+                        if orientation == "H":
+                            for i in range(column, column + ship_length):
+                                board[row][i] = "X"
+                        else:
+                            for i in range(row, row + ship_length):
+                                board[i][column] = "X"
+                        break
+                else:
+                    orientation, row, column = random.choice(["H", "V"]), random.randint(0, 9), random.randint(0, 9)
+                    if self.check_ship_fit(ship_length, row, column, orientation) and not self.ship_overlaps(board, row, column, orientation, ship_length):
+                        if orientation == "H":
+                            for i in range(column, column + ship_length):
+                                board[row][i] = "X"
+                        else:
+                            for i in range(row, row + ship_length):
+                                board[i][column] = "X"
+                        break
+
+    # Ensure only valid input is entered
+    def user_input(self, place_ship):
+        while True:
+            try:
+                row = input("Enter the row 0-9 of the ship: ")
+                if row in '0123456789':
+                    row = int(row)# - 1
+                    break
+            except ValueError:
+                print('Sorry invalid input, please enter a valid letter between 0-9')
+        while True:
+            try:
+                column = input("Enter the column of the ship: ").upper()
+                if column in 'ABCDEFGHIJ':
+                    column = self.LETTERS_TO_NUMBERS[column]
+                    break
+            except KeyError:
+                print('Sorry invalid input, please enter a valid letter between A-J')
+        return row, column
