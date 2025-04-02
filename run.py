@@ -65,7 +65,7 @@ class BattleshipGame:
             try:
                 row = input("Enter the row 0-9 of the ship: ")
                 if row in '0123456789':
-                    row = int(row)# - 1
+                    row = int(row)
                     break
             except ValueError:
                 print('Sorry invalid input, please enter a valid letter between 0-9')
