@@ -1,7 +1,7 @@
 # Battleships Game
 
 ## Description
-This is the Battleships Game project, a program with the purpose of offering a different version of the game of Battleship to the user, challenging them with having both luck and strategy to win the game.  
+This is the Battleships Game that runs in almost any Python terminal, a program with the purpose of offering a different version of the game of Battleship to the user, challenging them with having both luck and strategy to win the game. A challenger must sink all the opponent's battleships before their battleships are sunk in order to claim victory.
 
 ## How To Play
 In this version of the Battleship game a player plays against a computer opponent with both player's randomly generated game boards
@@ -10,7 +10,6 @@ The Player and the computer take turns guessing where the opponent's ships are t
 The winner is whoever sinks all their opponent's battleships first
 
 ## Features
-
 ### Existing Features
 - Random board generation
     - Both the player's and the opponent's ships are randomly placed on each game board
@@ -25,25 +24,35 @@ The winner is whoever sinks all their opponent's battleships first
     - Player cannot enter text or special characters for row numbers
     - Player cannot enter numbers or special characters for column letters
 
-
 ### Future Features
 - Allow player to place their ships manually
+- Keep track of how many games the player has won already
+- Allow the user to increase the size of the board and increase the challenge of the game
 
 ## Technologies Used
-- HTML was used as the foundation coding of this site
-- CSS was used to add the styles, color and layout of this site
+-  Python was used as the foundation coding of this game
 - VSCode was used as the main tool to manage project files/folders, write and edit code, upload Commit changes, and upload images
 - Git was used for the version control of the site
 - GitHub was used to host the code of this site
 - GitHub Pages was used to host the live version of this site
 
-
 ## Testing
 ### Manual Testing
-- joyous-quiz-group-image.jpg has been manually tested and no errors have been found
-- "quiz-trivia-example-container" section has been manually tested and no erros have been found
-- quizContainer 'Start' button has been tested and no errors have been found
-????>
+I have manually tested this project with the following:
+- Passed the code through PEP8 linter and confirmed there were no series errors, no runtime errors, just warningings about the length of some of the lines of code
+- Given invalid inputs inucluding numbers and letters out of range of the program, the same input square twice
+- Tested in my local terminal in VS code
+- Tested in a Python Integration Environment known as Python IDLE version 3.13(64-bit)
+
+### Manual Testing Results
+#### PEP8 Linter
+![image](https://github.com/user-attachments/assets/cd456dc6-2b61-4480-8dde-6c30b2aead85)
+![image](https://github.com/user-attachments/assets/82b032c4-0c24-427f-a0ed-864b0c128b2b)
+
+#### VS Code
+
+
+
 
 ### Responsiveness
 - This site was tested by chrome tool https://responsivedesignchecker.com/
