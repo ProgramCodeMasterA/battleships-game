@@ -34,7 +34,6 @@ The winner is whoever sinks all their opponent's battleships first
 - VSCode was used as the main tool to manage project files/folders, write and edit code, upload Commit changes, and upload images
 - Git was used for the version control of the site
 - GitHub was used to host the code of this site
-- GitHub Pages was used to host the live version of this site
 
 ## Testing
 ### Manual Testing
@@ -80,18 +79,18 @@ I have manually tested this project with the following:
 Create a local copy of the GitHub repository by following one of the two processes below:
 
 - Download ZIP file:
-  1. Go to the [GitHub Repo page](https://github.com/IuliiaKonovalova/madlib_with_python).
+  1. Go to the [GitHub Repo page](https://github.com/ProgramCodeMasterA/battleships-game).
   1. Click the Code button and download the ZIP file containing the project.
   1. Extract the ZIP file to a location on your PC.
 
 - Clone the repository:
   1. Open a folder on your computer with the terminal.
   1. Run the following command
-  - `git clone https://github.com/IuliiaKonovalova/madlib_with_python.git`
+  - `git clone https://github.com/ProgramCodeMasterA/battleships-game.git`
 
 - Alternatively, if using Gitpod, you can click below to create your own workspace using this repository.
 
-  [![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/IuliiaKonovalova/madlib_with_python)
+  [![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/ProgramCodeMasterA/battleships-game.git)
 
   1. Install Python module dependencies:
      
@@ -109,14 +108,12 @@ Create a local copy of the GitHub repository by following one of the two process
       - To set the proxy, you need to open setting in preferred VPN, find Server address and HTTP/HTTPS Proxy Port joining them by colons as it is shown in the example above:
       ![Settings VPN](documentation/deployment/settings_vpn.png)
 
-      
-
 
 ### To deploy the project to Heroku so it can be run as a remote web application:
 - Clone the repository:
   1. Open a folder on your computer with the terminal.
   1. Run the following command
-  - `git clone https://github.com/IuliiaKonovalova/madlib_with_python.git`
+  - `git clone https://github.com/ProgramCodeMasterA/battleships-game.git`
 
   1. Create your own GitHub repository to host the code.
   1. Run the command `git remote set-url origin <Your GitHub Repo Path>` to set the remote repository location to your repository.
@@ -177,7 +174,7 @@ Create a local copy of the GitHub repository by following one of the two process
 
 ### To deploy the project to Render so it can be run as a remote web application:
 
-Link to the deployed application on Render: [The Maddest Madlib](https://the-maddest-madlib.onrender.com)
+Link to the deployed application on Render: [battleships-game](https://battleships-game-1.onrender.com)
 
 1. Create a new Render account if you don't already have one here [Render](https://render.com/).
 
@@ -239,9 +236,6 @@ Link to the deployed application on Render: [The Maddest Madlib](https://the-mad
     - ![Save Web Service](documentation/deployment/render_create_web_service.png)
 
 15. Wait for the completion of the deployment.
-
-
-
 
 ### Deployment from VS Code
 This site can also be cloned to make a local copy that can be launched via VS Code Command Line Terminal, the steps are as follows:
