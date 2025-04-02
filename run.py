@@ -40,7 +40,7 @@ class BattleshipGame:
             while True:
                 if board == self.COMPUTER_BOARD:
                     orientation, row, column = random.choice(["H", "V"]), random.randint(0, 9), random.randint(0, 9)
-                    if self.check_ship_fit(ship_length, row, column, orientation) and not self.ship_overlaps(board, row, column, orientation, ship_length):
+                    if self.check_ship_fits(ship_length, row, column, orientation) and not self.ship_overlaps(board, row, column, orientation, ship_length):
                         if orientation == "H":
                             for i in range(column, column + ship_length):
                                 board[row][i] = "X"
@@ -50,7 +50,7 @@ class BattleshipGame:
                         break
                 else:
                     orientation, row, column = random.choice(["H", "V"]), random.randint(0, 9), random.randint(0, 9)
-                    if self.check_ship_fit(ship_length, row, column, orientation) and not self.ship_overlaps(board, row, column, orientation, ship_length):
+                    if self.check_ship_fits(ship_length, row, column, orientation) and not self.ship_overlaps(board, row, column, orientation, ship_length):
                         if orientation == "H":
                             for i in range(column, column + ship_length):
                                 board[row][i] = "X"
@@ -111,3 +111,30 @@ class BattleshipGame:
             else:
                 print("Player Misses")
                 board[row][column] = "-"
+
+    def play_game(self, player_name):
+        # Display current hits and misses on the player's and computer's boards
+        self.place_ships(self.COMPUTER_BOARD)
+        self.place_ships(self.PLAYER_BOARD)
+
+        while True:
+            # Start Player's turn
+            while True:
+                print("\n", player_name, "'s turn")
+                print('\nPlayers view of Computer Board:')
+                self.print_board(self.PLAYER_GUESS_BOARD)
+                self.turn(self.PLAYER_GUESS_BOARD)
+                break
+            if self.count_ship_hits(self.PLAYER_GUESS_BOARD) == 17:
+                print("\nCongratulations, you won the game!")
+                break
+
+            # Start the Computer's turn
+            while True:
+                self.turn(self.COMPUTER_GUESS_BOARD)
+                break
+            print("\nComputers view of ", player_name, " Board:")
+            self.print_board(self.COMPUTER_GUESS_BOARD)
+            if self.count_ship_hits(self.COMPUTER_GUESS_BOARD) == 17:
+                print("\nSorry, the computer won this game")
+                break
