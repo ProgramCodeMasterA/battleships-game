@@ -156,3 +156,44 @@ def game_instructions():
     ''')
     print("\n")
 
+def main():
+    print("Welcome to the Battleships Game program\n")
+
+    # Display game instructions
+    game_instructions()
+
+    # Enter a valid player name
+    while True:
+        player_name = str(input("Please enter your player name with a minimum length of 3 characters: "))
+
+        if len(player_name) < 3:
+            print("Sorry invlaid player name, please try again\n")
+        else:
+            break
+
+    # Continue program until user decides to end the program
+    while True:
+        # Create an instance of the BattleshipGame class and start the game
+        game = BattleshipGame()
+        game.play_game(player_name)
+
+        # Clear previous terminal output
+        clear_terminal()
+
+        # Check if the user would like to play again
+        replay = input("\nEnter 'yes' or 'Y' to play again, otherwise this program will end: ").upper()
+        if replay == "YES" or replay == "Y":
+            reiterate = input("\nDo you wish to read instructions again?, enter 'yes' or 'Y': ").upper()
+
+            # Reiterate instructions to user
+            if reiterate == "YES" or reiterate == "Y":
+                game_instructions()
+
+        else:
+            # Display goodbye message
+            print("Thanks for playing ", player_name, "Goodbye")
+            break
+
+# Initiate main program
+if __name__ == "__main__":
+    main()
