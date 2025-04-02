@@ -138,3 +138,21 @@ class BattleshipGame:
             if self.count_ship_hits(self.COMPUTER_GUESS_BOARD) == 17:
                 print("\nSorry, the computer won this game")
                 break
+
+# Clear current OS terminal output
+def clear_terminal():
+    os.system('cls' if os.name == 'nt' else 'clear')
+
+def game_instructions():
+    print('''
+    The aim of this game is to take out your opponents battleships by entering a selected square on
+    the board you think the opponents ships are hiding to win before the opponent eliminates all of
+    your ships
+
+    Enter a valid row number between 0-9 and a valid column letter between A-J on your turn then the
+    computer enters a random row number and column number for its turn until the a winner is deciceded
+
+    If you wish to exit the program simply close the terminal or hold down the Shift key while pressing C
+    ''')
+    print("\n")
+
