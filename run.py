@@ -19,3 +19,10 @@ class BattleshipGame:
         for row in board:
             print('{}|{}'.format(row_number, '|'.join(row)))
             row_number += 1
+
+    # Check that ship placement is not out of range of game board
+    def check_ship_fit(self, SHIP_LENGTH, row, column, orientation):
+        if orientation == "H":
+            return column + SHIP_LENGTH <= 10
+        else:
+            return row + SHIP_LENGTH <= 10
