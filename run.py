@@ -63,7 +63,7 @@ class BattleshipGame:
     def user_input(self, place_ship):
         while True:
             try:
-                row = input("Enter the row 0-9 of the ship: ")
+                row = input("Enter the row number between 0-9 of the square you want: ")
                 if row in '0123456789':
                     row = int(row)
                     break
@@ -71,7 +71,7 @@ class BattleshipGame:
                 print('Sorry invalid input, please enter a valid letter between 0-9')
         while True:
             try:
-                column = input("Enter the column of the ship: ").upper()
+                column = input("Enter the column letter between A-J of the of the square you want: ").upper()
                 if column in 'ABCDEFGHIJ':
                     column = self.LETTERS_TO_NUMBERS[column]
                     break
